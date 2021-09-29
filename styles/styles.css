@@ -760,11 +760,15 @@ ul.socialIcons li a {
 .projects {
   z-index: 2000;
 }
+.projects p {
+  margin-bottom: 8%;
+}
 .projects a {
   font-size: 1.8rem;
   border: 2px solid white;
   padding: 2%;
   border-radius: 8px;
+  margin-right: 2%;
 }
 .projects a:hover {
   background-color: rgba(255, 255, 255, 0.5);
@@ -788,6 +792,17 @@ ul.socialIcons li a {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+.contactMe form .input input,
+.contactMe form .msg input,
+.contactMe form .submitBtn input {
+  padding: 2% 0;
+}
+.contactMe form .input textarea,
+.contactMe form .msg textarea,
+.contactMe form .submitBtn textarea {
+  min-height: 20vh;
+  padding: 2% 0;
+}
 .contactMe input, .contactMe textArea {
   color: #fff;
   font-family: "Cutive Mono", monospace;
@@ -795,6 +810,7 @@ ul.socialIcons li a {
   border-radius: 8px;
   background-color: transparent;
   margin-bottom: 4%;
+  margin-top: 1%;
 }
 
 .submitBtn {
