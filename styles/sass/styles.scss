@@ -1,0 +1,459 @@
+@import 'setup.scss';
+@import 'variables.scss';
+@import 'mixins';
+
+html {
+  font-size: 62.5%;
+  color: $white;
+  font-family: $body-font;
+  scroll-behavior: smooth;
+}
+
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+canvas {
+  z-index: -100;
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 1400px;
+  margin: 0 auto;
+  @include mq (1300px) {
+    width: 90%;
+  }
+  @include mq (1000px) {
+    width: 95%;
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav {
+  ul {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  li {
+    font-family: $body-font;
+    text-transform: uppercase;
+    font-size: 2.8rem;
+    list-style: none;
+    padding: 20px;
+    @include mq (550px) {
+      // width: 100%;
+      padding: 0;
+      padding: 2%;
+      font-size: 1.8rem;
+    }
+  }
+}
+
+//hover style
+.hoverLink {
+  transition: 0.6s;
+  border-left: 2px dotted transparent;
+}
+.hoverLink:hover {
+  border-left: 2px dotted $white;
+  padding-left: 20px;
+}
+
+h1 {
+  font-family: $header-font;
+  font-size: 10rem;
+  text-transform: uppercase;
+  margin: 0;
+  margin-top: 12%;
+  text-align: center;
+  @include mq (1300px) {
+    margin-top: 7%;
+    font-size: 9rem;
+  }
+  @include mq (550px) {
+    font-size: 6rem;
+  }
+}
+
+h1:hover {
+  background: -webkit-linear-gradient(45deg, rgba(22,219,231,1) 0%, rgba(141,29,253,1) 50%, rgba(233,19,164,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.6s;
+}
+
+h2 {
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+
+h3 {
+  font-size: 6rem;
+  text-transform: uppercase;
+  text-align: center;
+  @include mq (1300px) {
+    font-size: 5rem;
+  }
+  @include mq (550px) {
+    font-size: 3rem;
+  }
+}
+
+
+h4 {
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+
+
+section {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include mq (1300px) {
+    width: 95%;
+  }
+}
+
+.spanContainer {
+  font-size: 3.5rem;
+  min-width: 320px;
+  margin-left: 30px;
+  @include mq (550px) {
+    width: 100%;
+    scale: 0.7;
+  }
+}
+
+.spanContainer .text {
+  margin: 0 8px;
+}
+
+
+.about {
+  color: white;
+  font-size: 2rem;
+  h4 {
+    margin: 0;
+  }
+  .aboutMeContainer {
+    display: flex;
+    align-items: center;
+    @include mq (550px) {
+      flex-direction: column-reverse;
+    }
+    .textContainer {
+      width: 80%;
+      @include mq (1000px) {
+        width: 60%;
+      }
+      @include mq (550px) {
+        width: 100%;
+      }
+    }
+    .imgContainer {
+      width: 20%;
+      margin-left: 8%;
+      @include mq (550px) {
+        width: 100%;
+        margin: 0;
+        margin-top: 5%;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+
+.selfie {
+  border-radius: 50%;
+  width: 250px;
+  border: 4px solid #e913a4;;
+}
+
+
+.projects {
+  border-radius: 10%;
+  // background-color: black;
+  margin: 0;
+}
+
+
+.skills {
+  .skillsContainer {
+    display: flex;
+    justify-content: center;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @include mq (550px) {
+      padding: 0;
+    }
+  }
+  li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    margin: 10px;
+  }
+  .skillIcon {
+    font-size: 7rem;
+    @include mq (900px) {
+      font-size: 5rem;
+    }
+    @include mq  (550px) {
+      font-size: 3rem;
+    }
+  }
+}
+
+
+.projectMainContainer {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  .projectContainer {
+    @include mq (550px) {
+      width: 100%;
+    }
+    .projectIcon {
+      font-size: 2.5rem;
+      padding: 2% ;
+    }
+    width: 50%;
+    padding: 2% 5%;
+    h5 {
+      font-size: 2rem;
+      margin: 0;
+      margin-bottom: 2%;
+    }
+    p {
+      font-size: 1.8rem;
+    }
+  }
+  .numberContainer {
+    width: 100%;
+    height: 4.9vh;
+    display: flex;
+    margin: 1.5% auto ;
+    justify-content: center;
+    h4 {
+      margin: 0;
+      font-size: 4rem;
+      position: absolute;
+    }
+  }
+  .proLeft {
+    text-align: right;
+    border-right: 2px solid white;
+  }
+  .proRight {
+    border-left: 2px solid white;
+  }
+  @include mq (550px) {
+    .empty {
+      display: none;
+    }
+  }
+}
+
+
+
+
+
+
+
+.gradient-border {
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  animation: animatedgradient 3s ease alternate infinite;
+  border-radius: 20px;
+  margin-top: 5%;
+  padding: 1%;
+  margin-bottom: 5%;  
+}
+
+
+.mainSection {
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5%;
+  width: 100%;
+  height: 100%;
+}
+
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+//bouncing arrow 
+@-webkit-keyframes bounce {
+  0% { transform: translateY(-5px)  }
+  50% { transform: translateY(10px) }
+  100% { transform: translateY(-5px) }
+}
+
+@keyframes bounce {
+  0% { transform: translateY(-5px)  }
+  50% { transform: translateY(10px) }
+  100% { transform: translateY(-5px) }
+}
+
+#bounce {
+  margin: 5%;
+  -webkit-animation: bounce 3s infinite ease-in-out;
+  -o-animation: bounce 3s infinite ease-in-out;
+  -ms-animation: bounce 3s infinite ease-in-out; 
+  -moz-animation: bounce 3s infinite ease-in-out; 
+  animation: bounce 3s infinite ease-in-out;
+  @include mq (1300px) {
+    margin-top: 7%;
+  }
+}
+
+ul.socialIcons {
+  margin-top: 40px;
+  font-size: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  a:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  li {
+    text-decoration: none;
+    padding: 0 2%;
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+// .linkedIn:hover {
+//   background: #16dbe7;
+//   -webkit-background-clip: text;
+//   -webkit-text-fill-color: transparent;
+//   -webkit-transition: 0.6s;
+//   transition: 0.6s;
+// }
+
+// .github:hover {
+//   background: #8d1dfd;
+//   -webkit-background-clip: text;
+//   -webkit-text-fill-color: transparent;
+//   -webkit-transition: 0.6s;
+//   transition: 0.6s;
+// }
+
+// .twitter:hover {
+//   background:#e913a4;
+//   -webkit-background-clip: text;
+//   -webkit-text-fill-color: transparent;
+//   -webkit-transition: 0.6s;
+//   transition: 0.6s;
+// }
+
+.projects {
+  z-index: 2000;
+  a {
+    font-size: 1.8rem;
+    border: 2px solid white;
+    padding: 2%;
+    border-radius: 8px;
+  }
+  a:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.contactMe {
+  font-size: 1.8rem;
+  margin-left: 25%;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  form {
+    .input,
+    .msg,
+    .submitBtn {
+      display: flex;
+      flex-direction: column;
+    }
+    max-width: 60%;
+  }
+  input, textArea {
+    color: $white;
+    font-family: $body-font;
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: transparent;
+    margin-bottom: 4%;
+    // width: 60%;
+  }
+}
+
+.submitBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+  button {
+    font-size: 1.8rem;
+    font-family: $body-font;
+    border: 2px solid white;
+    padding: 2%;
+    border-radius: 8px;
+    background: transparent;
+    color: white;
+    width: 30%;
+  }
+  :hover {
+    background-color: rgba(255, 255, 255, 0.5); }
+}
+
+
